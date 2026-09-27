@@ -17,11 +17,12 @@
             justify-content: center;
         }
         .box {
-            widht: 100px; 
+            width: 100px; 
             height: 100px;
             background: #444;
-            font-size: 40px;
+            font-size: 60px;
             cursor: pointer;
+            line-height: 100px;
         }
     </style>
 </head>
@@ -40,5 +41,22 @@
         <div class="box"></div>
         <div class="box"></div>
     </div>
+
+    <script>
+        let currentPlayer = "X";
+        
+        function makeMove(event) {
+            let clickedBox = event.target;
+            if (clickedBox.innerText == "") {
+                clickedBox.innerText = currentPlayer;
+                if (currentPlayer == "X") {
+                    currentPlayer = "O";
+                } else {
+                    currentPlayer = "X";
+                }
+            }
+        }
+       
+    </script>
 </body>
 </html>
